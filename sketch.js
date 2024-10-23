@@ -62,7 +62,7 @@ function draw() {
         ellipse(width - x, height - h / 2, 10, h); 
     }
 
-    // Get the energy levels of the bass, mid, and treble frequencies
+    // Get the energy levels of the bass
     let bassLevel = fft.getEnergy("bass");
     let bassSize = map(bassLevel, 0, 255, 0, 200);
 
@@ -74,7 +74,7 @@ function draw() {
     // text("Bass", width / 4, height / 2);
 
 
-    // change the background GIF based on the drumbeat
+    // change the background gif based on the drumbeat
     if (bassLevel > 210 && millis() - lastChangeTime > changeInterval) { 
         currentGifIndex = (currentGifIndex + 1) % gifs.length;
         lastChangeTime = millis();
