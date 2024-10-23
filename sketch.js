@@ -11,7 +11,7 @@ let currentGifIndex = 0;
 let lastChangeTime = 0;
 // the minimum time between changing gifs
 let changeInterval = 1000;
-let numgifs = 15;
+let numgifs = 19;
 let captions = [
     { text: "We choose to go to the moon", startTime: 10 },
     { text: "in this decade and do the other things.", startTime: 2000 },
@@ -101,6 +101,7 @@ function draw() {
     if (!song.isPlaying()) {
         songStarted = false;
         currentCaption = "";
+        currentGifIndex = 0;
     }
 }
 
@@ -109,6 +110,7 @@ function mousePressed() {
         userStartAudio().then(() => {
             song.play();
             songStarted = true;
+            currentGifIndex = 0;
         });
     }
 }
